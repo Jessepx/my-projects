@@ -1,0 +1,7 @@
+C:\Users\jesse\source\repos\Mod1_SelfLab1\Mod1_SelfLab1\bin\Debug\Mod1_SelfLab1.exe.config
+C:\Users\jesse\source\repos\Mod1_SelfLab1\Mod1_SelfLab1\bin\Debug\Mod1_SelfLab1.exe
+C:\Users\jesse\source\repos\Mod1_SelfLab1\Mod1_SelfLab1\bin\Debug\Mod1_SelfLab1.pdb
+C:\Users\jesse\source\repos\Mod1_SelfLab1\Mod1_SelfLab1\obj\Debug\Mod1_SelfLab1.csprojResolveAssemblyReference.cache
+C:\Users\jesse\source\repos\Mod1_SelfLab1\Mod1_SelfLab1\obj\Debug\Mod1_SelfLab1.csproj.CoreCompileInputs.cache
+C:\Users\jesse\source\repos\Mod1_SelfLab1\Mod1_SelfLab1\obj\Debug\Mod1_SelfLab1.exe
+C:\Users\jesse\source\repos\Mod1_SelfLab1\Mod1_SelfLab1\obj\Debug\Mod1_SelfLab1.pdb
