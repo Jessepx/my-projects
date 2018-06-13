@@ -1,0 +1,10 @@
+C:\Users\jesse.mangano\Desktop\Projects\my-projects-master\AutoMouse\AutoMouse\obj\Release\AutoMouse.Form1.resources
+C:\Users\jesse.mangano\Desktop\Projects\my-projects-master\AutoMouse\AutoMouse\obj\Release\AutoMouse.Properties.Resources.resources
+C:\Users\jesse.mangano\Desktop\Projects\my-projects-master\AutoMouse\AutoMouse\obj\Release\AutoMouse.csproj.GenerateResource.Cache
+C:\Users\jesse.mangano\Desktop\Projects\my-projects-master\AutoMouse\AutoMouse\obj\Release\AutoMouse.csproj.CoreCompileInputs.cache
+C:\Users\jesse.mangano\Desktop\Projects\my-projects-master\AutoMouse\AutoMouse\obj\Release\AutoMouse.exe
+C:\Users\jesse.mangano\Desktop\Projects\my-projects-master\AutoMouse\AutoMouse\obj\Release\AutoMouse.pdb
+C:\Users\jesse.mangano\Desktop\Projects\my-projects-master\AutoMouse\AutoMouse\obj\Release\AutoMouse.csprojResolveAssemblyReference.cache
+C:\Users\jesse.mangano\Desktop\AutoMouse.exe.config
+C:\Users\jesse.mangano\Desktop\AutoMouse.exe
+C:\Users\jesse.mangano\Desktop\AutoMouse.pdb

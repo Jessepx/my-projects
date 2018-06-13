@@ -18,3 +18,13 @@ C:\Users\jesse\source\repos\AutoMouse\AutoMouse\obj\Debug\AutoMouse.csproj.Gener
 C:\Users\jesse\source\repos\AutoMouse\AutoMouse\obj\Debug\AutoMouse.csproj.CoreCompileInputs.cache
 C:\Users\jesse\source\repos\AutoMouse\AutoMouse\obj\Debug\AutoMouse.exe
 C:\Users\jesse\source\repos\AutoMouse\AutoMouse\obj\Debug\AutoMouse.pdb
+C:\Users\jesse.mangano\Desktop\Projects\my-projects-master\AutoMouse\AutoMouse\bin\Debug\AutoMouse.exe.config
+C:\Users\jesse.mangano\Desktop\Projects\my-projects-master\AutoMouse\AutoMouse\bin\Debug\AutoMouse.exe
+C:\Users\jesse.mangano\Desktop\Projects\my-projects-master\AutoMouse\AutoMouse\bin\Debug\AutoMouse.pdb
+C:\Users\jesse.mangano\Desktop\Projects\my-projects-master\AutoMouse\AutoMouse\obj\Debug\AutoMouse.csprojResolveAssemblyReference.cache
+C:\Users\jesse.mangano\Desktop\Projects\my-projects-master\AutoMouse\AutoMouse\obj\Debug\AutoMouse.Form1.resources
+C:\Users\jesse.mangano\Desktop\Projects\my-projects-master\AutoMouse\AutoMouse\obj\Debug\AutoMouse.Properties.Resources.resources
+C:\Users\jesse.mangano\Desktop\Projects\my-projects-master\AutoMouse\AutoMouse\obj\Debug\AutoMouse.csproj.GenerateResource.Cache
+C:\Users\jesse.mangano\Desktop\Projects\my-projects-master\AutoMouse\AutoMouse\obj\Debug\AutoMouse.csproj.CoreCompileInputs.cache
+C:\Users\jesse.mangano\Desktop\Projects\my-projects-master\AutoMouse\AutoMouse\obj\Debug\AutoMouse.exe
+C:\Users\jesse.mangano\Desktop\Projects\my-projects-master\AutoMouse\AutoMouse\obj\Debug\AutoMouse.pdb
