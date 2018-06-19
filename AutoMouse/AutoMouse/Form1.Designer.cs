@@ -78,6 +78,8 @@
             this.Text = "AutoMouse";
             this.ResumeLayout(false);
             this.PerformLayout();
+            this.KeyPreview = true;
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(Form1_KeyDown);
 
         }
 
