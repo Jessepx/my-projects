@@ -14,6 +14,9 @@ namespace AutoMouse
     {
         Point clickLocation = new Point();
         bool locOn = false;
+        bool forceQuit = false;
+        bool buttonCheck = false;
+        bool clickCheck = false;
 
         [DllImport("user32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
         public static extern void mouse_event(int dwFlags, Point loc);
@@ -44,40 +47,50 @@ namespace AutoMouse
             {
                 timer1.Stop();
                 clickLocation = Cursor.Position;
-                label1.Text = clickLocation.ToString();
+                label1.Text = "Location set:\n" + clickLocation.ToString();
                 locOn = false;
+                buttonCheck = true;
             }
         }
 
         //label1 displays the X,Y coordinates of the stored location
         private void label1_Click(object sender, EventArgs e)
         {
-
+            //Displays X, Y Coordinates
         }
+
+
 
         //Uses the imported user32.dll to implement "Clicking" functionality when button2 is pressed
-        public void MouseClick()
-        {
-            int count = 0;
-            timer2.Tick += new EventHandler(button2_Click);
-            timer2.Interval = 2000;
-            timer2.Start();
-            Cursor.Position = clickLocation;
-            while (count < 5)
-            {
-                mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, clickLocation);
-                count++;
-            }
-            timer2.Stop();
-        }
-
-        //Where we are calling the "Clicking" functionality to occur
         private void button2_Click(object sender, EventArgs e)
         {
-            MouseClick();
+            int count = 0;
+
+            if (buttonCheck == false)
+            {
+                label1.Text = "Set your Location.";
+            }
+            else
+            {
+                if (clickCheck == false)
+                {
+                    timer2.Tick += new EventHandler(button2_Click);
+                    timer2.Interval = 2000;
+                    timer2.Start();
+                    clickCheck = true;
+                }
+                else
+                {
+                    Cursor.Position = clickLocation; //Moves cursor to stored location
+                    while (count < 1) //While loop that clicks ONCE now, for testing
+                    {
+                        mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, clickLocation);
+                        count++;
+                    }
+                    timer2.Stop();
+                    clickCheck = false;
+                }
+            }
         }
-
-        
-
     }
 }
