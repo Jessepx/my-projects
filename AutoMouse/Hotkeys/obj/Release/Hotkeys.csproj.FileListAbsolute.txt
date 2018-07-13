@@ -1,5 +1,0 @@
-C:\Users\jesse.mangano\Desktop\Projects\my-projects-master\AutoMouse\Hotkeys\bin\Release\Hotkeys.dll
-C:\Users\jesse.mangano\Desktop\Projects\my-projects-master\AutoMouse\Hotkeys\bin\Release\Hotkeys.pdb
-C:\Users\jesse.mangano\Desktop\Projects\my-projects-master\AutoMouse\Hotkeys\obj\Release\Hotkeys.csproj.CoreCompileInputs.cache
-C:\Users\jesse.mangano\Desktop\Projects\my-projects-master\AutoMouse\Hotkeys\obj\Release\Hotkeys.dll
-C:\Users\jesse.mangano\Desktop\Projects\my-projects-master\AutoMouse\Hotkeys\obj\Release\Hotkeys.pdb
