@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.coordButton = new System.Windows.Forms.Button();
+            this.coordTimer = new System.Windows.Forms.Timer(this.components);
+            this.clickDelay = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.timer3 = new System.Windows.Forms.Timer(this.components);
-            this.button3 = new System.Windows.Forms.Button();
+            this.startClickButton = new System.Windows.Forms.Button();
+            this.clickSpeed = new System.Windows.Forms.Timer(this.components);
+            this.logFileButton = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(38, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Grab";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.coordButton.Location = new System.Drawing.Point(38, 12);
+            this.coordButton.Name = "CoordinatesButton";
+            this.coordButton.Size = new System.Drawing.Size(75, 23);
+            this.coordButton.TabIndex = 0;
+            this.coordButton.Text = "Grab";
+            this.coordButton.UseVisualStyleBackColor = true;
+            this.coordButton.Click += new System.EventHandler(this.coordButton_Click);
             // 
             // label1
             // 
@@ -62,23 +62,23 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(189, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Clicker";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.startClickButton.Location = new System.Drawing.Point(189, 12);
+            this.startClickButton.Name = "StartClickingButton";
+            this.startClickButton.Size = new System.Drawing.Size(75, 23);
+            this.startClickButton.TabIndex = 3;
+            this.startClickButton.Text = "Clicker";
+            this.startClickButton.UseVisualStyleBackColor = true;
+            this.startClickButton.Click += new System.EventHandler(this.startClickButton_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(38, 74);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "File Path";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.logFileButton.Location = new System.Drawing.Point(38, 74);
+            this.logFileButton.Name = "FindLogfileButton";
+            this.logFileButton.Size = new System.Drawing.Size(75, 23);
+            this.logFileButton.TabIndex = 4;
+            this.logFileButton.Text = "File Path";
+            this.logFileButton.UseVisualStyleBackColor = true;
+            this.logFileButton.Click += new System.EventHandler(this.logFileButton_Click);
             // 
             // openFileDialog1
             // 
@@ -88,10 +88,10 @@
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(300, 125);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.logFileButton);
+            this.Controls.Add(this.startClickButton);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.coordButton);
             this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "AutoMouse v0.0.2";
@@ -104,13 +104,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button coordButton;
+        private System.Windows.Forms.Timer clickDelay;
+        private System.Windows.Forms.Timer coordTimer;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Timer timer3;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button startClickButton;
+        private System.Windows.Forms.Timer clickSpeed;
+        private System.Windows.Forms.Button logFileButton;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

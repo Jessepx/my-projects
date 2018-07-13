@@ -8,6 +8,8 @@ using System.Text;
 using System.Diagnostics;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using System.IO;
+using System.Text.RegularExpressions;
 using Hotkeys;
 
 namespace AutoMouse
@@ -33,22 +35,22 @@ namespace AutoMouse
         public Form1()
         {
             InitializeComponent();
-            qhk = new Hotkeys.GlobalHotkey(Constants.SHIFT, Keys.Q, this);
-            shk = new Hotkeys.GlobalHotkey(Constants.SHIFT, Keys.S, this);
+            qhk = new Hotkeys.GlobalHotkey(Constants.SHIFT, Keys.Q, this); // SHIFT+Q to stop clicking Hotkey
+            shk = new Hotkeys.GlobalHotkey(Constants.SHIFT, Keys.S, this); // SHIFT+S to start clicking Hotkey
         }
 
         private void QuitHotkey()
         {
-            timer2.Stop();
-            timer2.Dispose();
-            timer3.Stop();
-            timer3.Dispose();
+            clickDelay.Stop();
+            clickDelay.Dispose();
+            clickSpeed.Stop();
+            clickSpeed.Dispose();
             label1.Text = "Clicking Stopped.\nReset Coordinates.";
         }
 
         private void StartHotkey()
         {
-            timer2.Tick += new EventHandler(button2_Click);
+            clickDelay.Tick += new EventHandler(startClickButton_Click);
 
 
             if (buttonCheck == false)
@@ -60,19 +62,19 @@ namespace AutoMouse
                 if (clickCheck == false)
                 {
                     clickCheck = true;
-                    timer2.Interval = 2000;
-                    timer2.Start();
+                    clickDelay.Interval = 2000;
+                    clickDelay.Start();
                 }
                 else
                 {
                     clickCheck = false;
-                    timer2.Stop();
-                    timer2.Dispose();
+                    clickDelay.Stop();
+                    clickDelay.Dispose();
                     Cursor.Position = clickLocation; //Moves cursor to stored location
                     mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, clickLocation);
-                    timer3.Tick += new EventHandler(ClickMouseBaseGame);
-                    timer3.Interval = 2000;
-                    timer3.Start();
+                    clickSpeed.Tick += new EventHandler(ClickMouseBaseGame);
+                    clickSpeed.Interval = 2000;
+                    clickSpeed.Start();
                 }
             }
         }
@@ -121,20 +123,20 @@ namespace AutoMouse
         }
 
         //button1 should store the location of the Cursor into a Point object, allowing button2 to access that stored Point.
-        private void button1_Click(object sender, EventArgs e)
+        private void coordButton_Click(object sender, EventArgs e)
         {
             if (locOn == false)
             {
-                timer1.Tick += new EventHandler(button1_Click);
-                timer1.Interval = 1000;
-                timer1.Start();
+                coordTimer.Tick += new EventHandler(coordButton_Click);
+                coordTimer.Interval = 1000;
+                coordTimer.Start();
                 label1.Text = "Getting Location..";
                 locOn = true;
             }
             else
             {
-                timer1.Stop();
-                timer1.Dispose();
+                coordTimer.Stop();
+                coordTimer.Dispose();
                 clickLocation = Cursor.Position;
                 label1.Text = "Location set:\n" + clickLocation.ToString();
                 locOn = false;
@@ -149,9 +151,9 @@ namespace AutoMouse
         }
 
         //Uses the imported user32.dll to implement "Clicking" functionality when button2 is pressed
-        private void button2_Click(object sender, EventArgs e)
+        private void startClickButton_Click(object sender, EventArgs e)
         {
-            timer2.Tick += new EventHandler(button2_Click);
+            clickDelay.Tick += new EventHandler(startClickButton_Click);
             
 
             if (buttonCheck == false)
@@ -163,19 +165,19 @@ namespace AutoMouse
                 if (clickCheck == false)
                 {
                     clickCheck = true;
-                    timer2.Interval = 2000;
-                    timer2.Start();
+                    clickDelay.Interval = 2000;
+                    clickDelay.Start();
                 }
                 else
                 {
                     clickCheck = false;
-                    timer2.Stop();
-                    timer2.Dispose();
+                    clickDelay.Stop();
+                    clickDelay.Dispose();
                     Cursor.Position = clickLocation; //Moves cursor to stored location
                     mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, clickLocation);
-                    timer3.Tick += new EventHandler(ClickMouseBaseGame);
-                    timer3.Interval = 2000;
-                    timer3.Start();
+                    clickSpeed.Tick += new EventHandler(ClickMouseBaseGame);
+                    clickSpeed.Interval = 2000;
+                    clickSpeed.Start();
                 }
             }
         }
@@ -191,7 +193,7 @@ namespace AutoMouse
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void logFileButton_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog1 = new OpenFileDialog())
             {
@@ -200,16 +202,22 @@ namespace AutoMouse
                 openFileDialog1.FilterIndex = 2;
                 openFileDialog1.RestoreDirectory = true;
 
-                if(openFileDialog1.ShowDialog() == DialogResult.OK)
-                {
-                    text = System.IO.File.ReadAllText(openFileDialog1.FileName);
-
-                    if (text.Contains("::GetBonusWin"))
-                    {
-                        MessageBox.Show("success");
-                    }
-                }
+                ParseLog();
             } 
+        }
+
+        private void ParseLog()
+        {
+             
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                text = System.IO.File.ReadAllText(openFileDialog1.FileName);
+
+                if (text.Contains("::GetBonusWin"))
+                {
+                    MessageBox.Show("success");
+                }
+            }
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
